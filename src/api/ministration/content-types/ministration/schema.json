@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ministrations",
+  "info": {
+    "singularName": "ministration",
+    "pluralName": "ministrations",
+    "displayName": "Ministration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "minister": {
+      "type": "string",
+      "required": true
+    },
+    "keyWords": {
+      "type": "json",
+      "required": true
+    },
+    "youtubeLink": {
+      "type": "string"
+    },
+    "transcribedBy": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}
