@@ -362,6 +362,38 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiCarouselCarousel extends Schema.CollectionType {
+  collectionName: 'carousels';
+  info: {
+    singularName: 'carousel';
+    pluralName: 'carousels';
+    displayName: 'carousel';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    images: Attribute.Media;
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::carousel.carousel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::carousel.carousel',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMinistrationMinistration extends Schema.CollectionType {
   collectionName: 'ministrations';
   info: {
@@ -834,6 +866,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::carousel.carousel': ApiCarouselCarousel;
       'api::ministration.ministration': ApiMinistrationMinistration;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

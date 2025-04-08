@@ -7,7 +7,9 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "railway": "railway run npm run develop"
+    
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.23.1",
